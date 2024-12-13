@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import "./contact.scss"
 import { motion, useInView } from 'framer-motion';
 import emailjs from "@emailjs/browser";
+import ReCaptcha from '../recaptcha/reCaptcha';
+
 
 const variants = {
     initial: {
@@ -42,13 +44,26 @@ const Contact = () => {
               window.location.reload();
           });
   };
+
+  const [token, setToken] = useState('')
+  const [submitEnabled, setSubmitEnabled] = useState(false)
+
+  useEffect(() => {
+    if(token.length){
+        setSubmitEnabled(true);
+    }
+}, [token]) 
+  
+  const handleToken = (token) => {
+    setToken(token)
+  }
   return (
     <motion.div ref={ref} className='contact' variants={variants} initial="initial" whileInView="animate">
         <motion.div className="textContainer" variants={variants}>
             <h1>Let's work together</h1>
             <motion.div className="item" variants={variants}>
                 <h2>Mail</h2>
-                <span>tolulope@zven.com</span>
+                <span>contact@zvenservice.com.ng</span>
             </motion.div>
             <motion.div className="item"nvariants={variants}>
                 <h2>Address</h2>
@@ -56,7 +71,7 @@ const Contact = () => {
             </motion.div>
             <motion.div className="item" variants={variants}>
                 <h2>Phone</h2>
-                <span>+2348 14347 3699</span>
+                <span>+2349 15726 5733</span>
             </motion.div>
         </motion.div>
         <div className="formContainer">
@@ -65,7 +80,7 @@ const Contact = () => {
              whileInView={{opacity:0}}
              transition={{delay: 3, duration:1}}
              >
-            <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
+            <svg  viewBox="0 0 32.666 32.666">
             <motion.path
               strokeWidth={0.2}
               fill="none"
@@ -98,8 +113,13 @@ const Contact = () => {
                 <input type="text" required placeholder="Name" name="name" />
                 <input type="email" required placeholder="Email" name="email" />
                 <textarea rows={8} placeholder="Message" name="message"/>
-                <button>Submit</button>
+                <ReCaptcha siteKey='6LeIgowqAAAAAG2jEZSsVaI2iIpQsOldWsk91UZB' callback={handleToken} />
+                <button
+                disabled={!submitEnabled}
+                >Submit</button>
             </motion.form>
+                
+            
         </div>
     </motion.div>
   );
