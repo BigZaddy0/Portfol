@@ -64,7 +64,7 @@ const Services = () => {
           <p>
           At our agency, we’re passionate about crafting websites that resonate with your vision. Whether it’s a sleek e-commerce platform or an engaging blog, we’ll build it from the ground up. Our team specializes in technologies like WordPress and React, ensuring your site is not only visually stunning but also optimized for search engines and mobile devices
           </p>
-          <button>Go</button>
+          <button></button>
         </motion.div>
         <motion.div
           className="box"
@@ -74,7 +74,7 @@ const Services = () => {
           <p>
           Branding isn’t just about logos; it’s about creating an emotional connection with your audience. We’ll work closely with you to understand your business values, target audience, and unique selling points. From logo design to comprehensive brand guidelines, we’ll ensure your brand stands out and leaves a lasting impression.
           </p>
-          <button>Go</button>
+          <button></button>
         </motion.div>
         <motion.div
           className="box"
@@ -84,7 +84,7 @@ const Services = () => {
           <p>
           Imagine your website as a hidden gem waiting to be discovered. Our SEO experts will unlock its potential. We’ll analyze keywords relevant to your industry, optimize your content, and build authoritative backlinks. As a result, your website will climb search engine rankings, attracting organic traffic and boosting your online presence.
           </p>
-          <button>Go</button>
+          <button></button>
         </motion.div>
         <motion.div
           className="box"
@@ -94,7 +94,7 @@ const Services = () => {
           <p>
           Our creative team lives and breathes design. Whether it’s eye-catching banners, captivating infographics, or social media graphics that stop the scroll, we’ve got you covered. We understand that aesthetics matter, and we’ll ensure your visuals align seamlessly with your brand identity.
           </p>
-          <button>Go</button>
+          <button></button>
         </motion.div>
       </motion.div>
     </motion.div>
